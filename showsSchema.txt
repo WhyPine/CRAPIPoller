@@ -1,0 +1,26 @@
+CREATE TABLE shows (
+    linked_resource_key VARCHAR(50) PRIMARY KEY,
+    rating JSONB,
+    external_id VARCHAR(50),
+    id VARCHAR(50),
+    channel_id VARCHAR(50),
+    type VARCHAR(50),
+    new BOOLEAN,
+    images JSONB,
+    promo_title VARCHAR(255),
+    series_metadata JSONB,
+    slug_title VARCHAR(255),
+    last_public TIMESTAMP,
+    description TEXT,
+    title VARCHAR(255),
+    slug VARCHAR(255),
+    promo_description TEXT,
+    movie_listing_metadata JSONB
+);
+
+\COPY shows(linked_resource_key, rating, external_id, id, channel_id, type, new, images, promo_title, series_metadata, slug_title, last_public, description, title, slug, promo_description, movie_listing_metadata)
+FROM 'C:\Users\goodi\OneDrive\Desktop\Crunchyroll\shows.csv' 
+DELIMITER ','
+WITH CSV HEADER;
+
+\COPY shows FROM 'C:\Users\goodi\OneDrive\Desktop\Crunchyroll\shows.csv' DELIMITER ',' CSV HEADER;
