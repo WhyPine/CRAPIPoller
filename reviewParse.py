@@ -5,7 +5,7 @@ from psycopg2.extras import Json
 from client import CrunchyrollClient
 import methods
 from psycopg2.extras import Json
-
+import os
 
 # Database connection parameters
 DB_NAME = "Crunchyroll"
@@ -13,9 +13,7 @@ DB_USER = "postgres"
 DB_PASS = "ADMIN"
 DB_HOST = "localhost"
 
-asd = "host=cranalytics.postgres.database.azure.com;dbname=postgres;port=5432;user=psqlsde342nzxc01243x34568zx;password=sbe3234k.1234bhjcbjyfgh345!-szv678r137/?das1;Ssl Mode=Require"
-
-ENV_VARS = asd
+ENV_VARS = os.environ.get("DATABASE_CONNECTION_STRING")
 
 split = ENV_VARS.split(';')
 PARAMS = {}
