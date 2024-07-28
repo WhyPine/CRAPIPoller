@@ -1,0 +1,15 @@
+CREATE TABLE reviews (
+    series_id VARCHAR(10),
+    review_id UUID PRIMARY KEY,
+    title TEXT NOT NULL,
+    body TEXT NOT NULL,
+    language VARCHAR(10) NOT NULL,
+    created_at TIMESTAMP NOT NULL,
+    modified_at TIMESTAMP NOT NULL,
+    authored_reviews INT NOT NULL,
+    spoiler BOOLEAN NOT NULL,
+    author_rating VARCHAR(5) NOT NULL,
+    author JSONB NOT NULL,
+    ratings JSONB NOT NULL,
+    reported BOOLEAN NOT NULL
+);
